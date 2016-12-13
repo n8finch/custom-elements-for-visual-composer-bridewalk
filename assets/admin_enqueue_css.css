@@ -1,0 +1,3 @@
+.wpb_test_element.wpb_content_element > .wpb_element_wrapper {
+    background-color: none; /* To check if this css is working */
+}
