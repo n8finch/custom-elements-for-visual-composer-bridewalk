@@ -1,11 +1,15 @@
 (function ($) {
 	$(document).ready(function () {
-		// console.log('document is ready');
 
+		/*
+		 * Adding functionality for Making Checklists as complete
+		 *
+		 */
 		$('.checkbox-with-text-checklist').on('click', function() {
 			var self = $(this);
 			var child = $(this)
 			var user_meta_key_checked = self.attr('data-user-checklist');
+
 			//First, send the ajax
 			jQuery.ajax({
 				url : checklist_ajax_object.ajax_url,
@@ -55,9 +59,56 @@
 
 				}
 
-		});
+		});// end checklist ajax function
 
-	});
+
+		/*
+		 * Adding functionality for marking vendors as booked
+		 *
+		 */
+
+		 $('.marked_booked').on('click', function(e) {
+			e.preventDefault();
+ 			var user_meta_key_booked = $(this).attr('data-mark-as-booked');
+			var innerHTML = $(this).html();
+
+ 			//First, send the ajax
+ 			jQuery.ajax({
+ 				url : checklist_ajax_object.ajax_url,
+ 				type : 'post',
+ 				data : {
+ 					action : 'mark_as_booked_vendors',
+ 					booked_item: user_meta_key_booked,
+ 				},
+ 				success : function( response ) {
+ 					console.log(response);
+ 				}
+			}); //end ajax
+
+			$(this).toggleClass('marked_booked_booked');
+			if( 'Booked' === innerHTML ) {
+				$(this).html('Mark as Booked');
+			} else {
+				$(this).html('Booked');
+			};
+		}); // marked book event listener
+
+		$('a.eltd-listing-whislist').on('click', function() {
+			var isWishlisted = $(this).hasClass('eltd-added-to-wishlist');
+			if ( isWishlisted ) {
+				var sibling = $(this).siblings('.eltd-listing-item-booked').children();
+				var siblingInnerHTML = (sibling[0]).innerHTML;
+				console.log(siblingInnerHTML);
+				if ( 'Booked' === siblingInnerHTML) {
+					$(sibling).trigger('click');
+				}
+			}
+
+
+		});//end wishlist click, remove booking.
+
+
+	}); // end document.ready();
 
 	// console.log('front end js loaded');
 })(jQuery);

@@ -13,6 +13,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
+//Include the markbooked file and it's functions
+require_once plugin_dir_path( __FILE__ ) . 'markbooked.php';
+
+
 function n8f_vc_map_dependencies() {
 	if ( ! defined( 'WPB_VC_VERSION' ) ) {
 		$plugin_data = get_plugin_data(__FILE__);
@@ -40,7 +44,9 @@ function load_checklist_with_text_element_scripts_on_front_end() {
 add_action('wp_enqueue_scripts', 'load_checklist_with_text_element_scripts_on_front_end', 999);
 
 
-
+/**
+ * Add ajax actions for checlist functionality
+ */
 add_action( 'wp_ajax_checklist_item_check_uncheck', 'checklist_item_check_uncheck' );
 
 function checklist_item_check_uncheck() {
@@ -128,6 +134,18 @@ function text_vc_map_init() {
 				"param_name"  => "list_item_description",
 				"value"				=> "This is the default description.",
 				"description" => __( "Description of the list item.", "js_composer" )
+			),
+			array(
+				"type"        => "textfield",
+				"heading"     => __( "Button Text", "js_composer" ),
+				"param_name"  => "list_item_button_text",
+				"description" => __( "The text that displays as a link.", "js_composer" )
+			),
+			array(
+				"type"        => "textfield",
+				"heading"     => __( "Button Link", "js_composer" ),
+				"param_name"  => "list_item_button_link",
+				"description" => __( "What link the button should go to.", "js_composer" )
 			),
 			array(
 				"type"        => "textfield",

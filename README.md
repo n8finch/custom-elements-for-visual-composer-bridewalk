@@ -1,6 +1,4 @@
-From vc-dev-example
+vc-dev-example
 ==============
 
-Started from https://github.com/wpbakery/vc-dev-example
-
-Didn't want to lose this info:-)
+Basic example to show how you can work with backbone views in Visual Composer http://vc.wpbakery.com

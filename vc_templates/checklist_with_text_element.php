@@ -10,6 +10,8 @@ $user_ID = get_current_user_id();
 $fa_icon = $atts['font_awesome_icon'];
 $title = $atts['list_item_title'];
 $descritpion = $atts['list_item_description'];
+$buttontext = $atts['list_item_button_text'];
+$buttonlink = $atts['list_item_button_link'];
 $data_storage = $atts['user_meta_key_checked'];
 $is_checked = get_user_meta( $user_ID, 'checklist_'.$data_storage, true);
 
@@ -55,6 +57,10 @@ span.checkbox-with-text-checklist .checked {
         <div class="eltd-iwt-text-holder">
             <p><?php echo $descritpion; ?></p>
 
+                    </div>
+        <div class="eltd-iwt-button-holder">
+				<a href="<?php echo $buttonlink; ?>" class="eltd-listing-website" target="_blank" itemprop="url">
+					<span itemprop="name" class="checklist_button_text"><?php echo $buttontext; ?></span>
                     </div>
     </div>
 </div>
