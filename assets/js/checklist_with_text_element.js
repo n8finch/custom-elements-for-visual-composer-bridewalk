@@ -85,15 +85,32 @@
  				}
 			}); //end ajax
 
+			//Toggle booking css
 			$(this).toggleClass('marked_booked_booked');
 			if( 'Booked' === innerHTML ) {
 				$(this).html('Mark as Booked');
 			} else {
 				$(this).html('Booked');
 			};
+
+			//trigger wishlist item if not booked
+			var getSibs = $(this).parent().siblings();
+			var isWishlisted = $(getSibs[0]).hasClass('eltd-added-to-wishlist');
+
+			if ( !isWishlisted && !('Booked' === innerHTML) ) {
+				$(getSibs[0]).trigger('click');
+			}
 		}); // marked book event listener
 
 		$('a.eltd-listing-whislist').on('click', function() {
+
+			var isSinglePage = $(this).parent(); //correct
+			isSinglePage = $(isSinglePage[0]).hasClass('eltd-single-listing-wishlist');
+
+			if ( isSinglePage ) {
+				return;
+			}
+
 			var isWishlisted = $(this).hasClass('eltd-added-to-wishlist');
 			if ( isWishlisted ) {
 				var sibling = $(this).siblings('.eltd-listing-item-booked').children();
