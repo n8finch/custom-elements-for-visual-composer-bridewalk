@@ -43,7 +43,7 @@ span.checkbox-with-text-checklist .checked {
 </style>
 <div class="eltd-iwt clearfix eltd-iwt-icon-left eltd-iwt-icon-medium">
     <div class="eltd-iwt-icon-holder">
-        <span class="eltd-icon-shortcode circle checkbox-with-text-checklist <?php echo $is_checked; ?>" style="width: 70px; height: 70px; line-height: 70px; background-color: <?php echo $check_background; ?>; border-style: solid; border-color: <?php echo $check_border; ?>; border-width: 2px;" data-hover-border-color="#e37171" data-hover-background-color="#e37171" data-hover-color="#ffffff" data-color="#46b1bb" data-user-checklist="checklist_<?php echo $data_storage; ?>">
+        <span class="eltd-icon-shortcode circle checkbox-with-text-checklist <?php echo $is_checked; ?>" style="width: 70px; height: 70px; line-height: 70px; background-color: <?php echo $check_background; ?>; border-style: solid; border-color: <?php echo $check_border; ?>; border-width: 2px;" data-user-checklist="checklist_<?php echo $data_storage; ?>">
 
 	        <span class="eltd-icon-font-awesome fa <?php echo $fa_icon; ?> eltd-icon-element" style="color: <?php echo $check_color; ?>; font-size: 35px;"></span>
 
@@ -58,9 +58,9 @@ span.checkbox-with-text-checklist .checked {
             <p><?php echo $descritpion; ?></p>
 
                     </div>
-        <div class="eltd-iwt-button-holder">
-				<a href="<?php echo $buttonlink; ?>" class="eltd-listing-website" target="_blank" itemprop="url">
-					<span itemprop="name" class="checklist_button_text"><?php echo $buttontext; ?></span>
+        <div class="checklist_button_holder">
+				<a href="<?php echo $buttonlink; ?>" class="checklist_button_Link" target="_blank" itemprop="url">
+					<span itemprop="name" class="checklist_button_text"><?php if (isset($buttontext)) { echo $buttontext,'<i class="fa fa-angle-double-right" aria-hidden="true"></i>'; } ?></span></a>
                     </div>
-    </div>
+        </div>
 </div>

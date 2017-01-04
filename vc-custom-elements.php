@@ -15,7 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 //Include the markbooked file and it's functions
 require_once plugin_dir_path( __FILE__ ) . 'markbooked.php';
-
+//Include the budget calculator file and it's functions
+require_once plugin_dir_path( __FILE__ ) . 'budget-calculator.php';
 
 function n8f_vc_map_dependencies() {
 	if ( ! defined( 'WPB_VC_VERSION' ) ) {
@@ -125,14 +126,12 @@ function text_vc_map_init() {
 				"type"        => "textfield",
 				"heading"     => __( "List Item Title", "js_composer" ),
 				"param_name"  => "list_item_title",
-				"value"				=> "This is the default title",
 				"description" => __( "Title of the list item.", "js_composer" )
 			),
 			array(
 				"type"        => "textfield",
 				"heading"     => __( "List Item Description", "js_composer" ),
 				"param_name"  => "list_item_description",
-				"value"				=> "This is the default description.",
 				"description" => __( "Description of the list item.", "js_composer" )
 			),
 			array(
@@ -151,7 +150,6 @@ function text_vc_map_init() {
 				"type"        => "textfield",
 				"heading"     => __( "User Meta Key", "js_composer" ),
 				"param_name"  => "user_meta_key_checked",
-				"value"				=> "something_like_this (replace me!)",
 				"description" => __( "This is the meta key to store info in the db. No spaces, only - and _ , for example wedding_photographer.", "js_composer" )
 			),
 		)

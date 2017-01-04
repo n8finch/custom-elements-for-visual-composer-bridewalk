@@ -125,6 +125,71 @@
 		});//end wishlist click, remove booking.
 
 
+
+		/******************************************************************************************
+		 * Budget Calculator section
+		 *
+		 ******************************************************************************************
+		 */
+
+		//Add up subcategories
+		function addSubCats() {
+			var actualCost = $('.actual_cost');
+			var actualCostContainer = actualCost[0];
+			var subCats = $(actualCostContainer).parentsUntil('div.section.group.category_holder').siblings();
+			console.log(subCats);
+
+		};
+
+		//Udateable container function
+		function updatePrice(event) {
+			var self = event.currentTarget;
+			var currentBudget = $(self).html();
+			currentBudget = Number(currentBudget.replace(/(,[^\d]*)/, '').slice(1));
+			//Create input form for new budget
+			var html = '<input id="budget-input" type="text" name="" value="' + currentBudget + '"  />';
+			$(self).html(html);
+
+			//Get the input value
+			$("#budget-input").focus().on('blur', function() {
+				var newBudget = $(this).val();
+				// console.log('Budget: ' + newBudget);
+				// console.log('this: ' + this);
+				var length = newBudget.length;
+
+				//TODO: ajax the newBudget here
+
+				//TODO: regex or replace $ sign and commas for numbers
+
+				$(self).html(newBudget);
+
+
+				//Call functions for updating
+				addSubCats();
+			});
+
+
+
+		}; //end updatePrice function
+
+
+
+
+
+		//Change out Total Budget
+		$('.budget_container').on('click', function(e) {
+			updatePrice(e);
+		});
+
+		//Change out Sub Categories
+		$('.sub_cost').on('click', function(e) {
+			updatePrice(e);
+		});
+
+		console.log('ready!');
+
+
+
 	}); // end document.ready();
 
 	// console.log('front end js loaded');
