@@ -139,12 +139,28 @@
 		 ******************************************************************************************
 		 */
 
+		function budgetCalcAJAX(newBudget, currentLineItem) {
+			//First, send the ajax
+			jQuery.ajax({
+				url : checklist_ajax_object.ajax_url,
+				type : 'post',
+				data : {
+					action : 'update_budget_calculator_totals',
+					budget_line_item: currentLineItem,
+					budget_new_amout: newBudget,
+
+				},
+				success : function( response ) {
+					console.log(response);
+				}
+			});
+		}
+
 		//Add up category totals and replace total spent
 		function addTotalSpent() {
 			var totalSpent = addSubCats();
 			$('.spent_container').html('$' + totalSpent.toFixed(2));
-			console.log(totalSpent);
-		}
+		}//end addTotalSpent function
 
 
 		//Add up subcategories
@@ -159,7 +175,6 @@
 			}
 
 			$.each(actualCost, function(key, catTotalElem) {
-				// console.log(catTotalElem);
 				var subCostArr = [];
 				var sumSubCats = 0;
 				var subCatsObj = $(catTotalElem).parents('div.section.group.category').siblings();
@@ -178,15 +193,13 @@
 
 				totalCostArr.push(sumSubCats);
 
-
-
 			});
 
 			sumTotalCost = totalCostArr.reduce(sumArray, 0);
 
 			return sumTotalCost;
 
-		};
+		}; // end addSubCats function
 
 
 
@@ -194,16 +207,15 @@
 		function updatePrice(event) {
 			var self = event.currentTarget;
 			var currentBudget = $(self).html();
+			var currentLineItem = $(self).data('lineItem');
 			currentBudget = Number(currentBudget.replace(/(,[^\d]*)/, '').slice(1));
 			//Create input form for new budget
-			var html = '<input id="budget-input" type="text" name="" value="' + currentBudget + '"  />';
+			var html = '<input id="budget-input" type="text" name="" value="' + currentBudget + '"  /><i id="total_buget_pencil_icon" class="eltd-icon-linear-icon lnr lnr-pencil "></i>';
 			$(self).html(html);
 
 			//Get the input value
 			$("#budget-input").focus().on('blur', function() {
 				var newBudget = $(this).val();
-				// console.log('Budget: ' + newBudget);
-				// console.log('this: ' + this);
 				var length = newBudget.length;
 
 				//TODO: ajax the newBudget here
@@ -213,6 +225,7 @@
 
 				$(self).html('$' + Number(newBudget).toFixed(2));
 
+				budgetCalcAJAX(newBudget, currentLineItem);
 
 				//Call functions for updating
 				addSubCats();
@@ -222,9 +235,6 @@
 
 
 		}; //end updatePrice function
-
-
-
 
 
 		//Change out Total Budget
@@ -237,8 +247,6 @@
 			updatePrice(e);
 		});
 
-
-
 		//Initialize the budget calculator functions
 		(function init() {
 			addTotalSpent();
@@ -247,5 +255,4 @@
 
 	}); // end document.ready();
 
-	// console.log('front end js loaded');
 })(jQuery);

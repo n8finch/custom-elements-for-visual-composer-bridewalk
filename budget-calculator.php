@@ -2,10 +2,143 @@
 
 /**
  * Budget Calculator Shortcode for BrideWalk
+ *
+ * Includes AJAX handler and Budget Calculator Shortcode
+ *
  */
 
+//AJAX function for budget calculator, should only work if user is logged in
+add_action( 'wp_ajax_update_budget_calculator_totals', 'update_budget_calculator_totals' );
 
- function bw_budget_calculator() {
+function update_budget_calculator_totals() {
+
+
+
+	// $user_ID = get_current_user_id();
+	$budget_line_item = $_POST['budget_line_item'];
+	$budget_new_amout = $_POST['budget_new_amout'];
+	// $user_meta_value = get_user_meta( $user_ID, $user_meta_key, true);
+	//
+	// //Asign value to meta key if it exists or not
+	// if ($user_meta_value) {
+	// 	if ( $user_meta_value === 'checked') {
+	// 		update_user_meta( $user_ID, $user_meta_key, 'unchecked')	;
+	// 	} else {
+	// 		update_user_meta( $user_ID, $user_meta_key, 'checked')	;
+	// 	}
+	// } else {
+	// 	add_user_meta( $user_ID, $user_meta_key, 'checked', true );
+	// }
+	//
+	// $user_meta_value = get_user_meta( $user_ID, $user_meta_key, true);
+
+	echo 'Receiving from Budget calc: ' . $budget_line_item . ' and ' . $budget_new_amout ;
+	die();
+}
+
+
+
+function bw_budget_calculator() {
+	 /**
+	  * Budget Calculator Model get the data here
+	  */
+
+	 //All the vars
+	//  ceremony-venue-fee
+	//  ceremony-ceremony-venue-accessories
+	//  ceremony-other
+	//  reception-reception-venue-fee
+	//  reception-reception-venue-accessories
+	//  reception-other
+	//  photographer-photographer
+	//  photographer-additional-prints
+	//  photographer-other
+	//  caterer-rehersal-dinner-venue
+	//  caterer-beverage-bartenders
+	//  caterer-food-service
+	//  caterer-other
+	//  attire-bride-accessories
+	//  attire-dress-altertations
+	//  attire-groom-accessories
+	//  attire-groom-tux-suit
+	//  attire-headpiece-veil
+	//  attire-other
+	//  florist-bouquets
+	//  florist-ceremony-decorations
+	//  florist-flower-girl-flowers
+	//  florist-groom-groomsmen-boutonnieres
+	//  florist-reception-decorations-centerpieces
+	//  florist-other
+	//  dj-dj
+ // 	 dj-band
+ // 	 dj-ceremony-musicians
+	//  dj-other
+	//  videographer-videographer
+	//  videographer-other
+	//  desserts-cake-cutting-fee
+	//  desserts-other
+	//  lodging-accomodations-wedding-night
+	//  lodging-hotel-rooms-guests
+	//  lodging-other
+	//  transportation-guest-shuttle-parking
+	//  transportation-limo-car-rentals
+	//  transportation-other
+	//  rentals-reception-rentals
+	//  rentals-other
+	//  beauty-hair-makeup
+	//  beauty-prewedding-pampering
+	//  beauty-other
+	 //
+	//  ceremony_venue_fee
+	//  ceremony_ceremony_venue_accessories
+	//  ceremony_other
+	//  reception_reception_venue_fee
+	//  reception_reception_venue_accessories
+	//  reception_other
+	//  photographer_photographer
+	//  photographer_additional_prints
+	//  photographer_other
+	//  caterer_rehersal_dinner_venue
+	//  caterer_beverage_bartenders
+	//  caterer_food_service
+	//  caterer_other
+	//  attire_bride_accessories
+	//  attire_dress_altertations
+	//  attire_groom_accessories
+	//  attire_groom_tux_suit
+	//  attire_headpiece_veil
+	//  attire_other
+	//  florist_bouquets
+	//  florist_ceremony_decorations
+	//  florist_flower_girl_flowers
+	//  florist_groom_groomsmen_boutonnieres
+	//  florist_reception_decorations_centerpieces
+	//  florist_other
+	//  dj_dj
+ // 	 dj_band
+ // 	 dj_ceremony_musicians
+	//  dj_other
+	//  videographer_videographer
+	//  videographer_other
+	//  desserts_cake_cutting_fee
+	//  desserts_other
+	//  lodging_accomodations_wedding_night
+	//  lodging_hotel_rooms_guests
+	//  lodging_other
+	//  transportation_guest_shuttle_parking
+	//  transportation_limo_car_rentals
+	//  transportation_other
+	//  rentals_reception_rentals
+	//  rentals_other
+	//  beauty_hair_makeup
+	//  beauty_prewedding_pampering
+	//  beauty_other
+
+
+
+	 /**
+	  * Budget Calculater View
+	  */
 	 ?>
             <div class="budget_calculator_holder">
                 <div class="section group calculator_bar">
@@ -13,6 +146,7 @@
                     <div class="col span_1_of_2">
                     <div class="total_budget">Total Budget</div>
                     <div class="budget_container">$18,000</div>
+					<!-- <i id="total_buget_pencil_icon" class="eltd-icon-linear-icon lnr lnr-pencil "></i> -->
                     </div>
                     <div class="col span_2_of_2">
                     <div class="total_budget">Total Spent</div>
@@ -44,7 +178,7 @@
                     <div class="sub_name">Ceremony Venue Fee</div>
                     </div>
                     <div class="col span_2_of_2">
-                    <div class="sub_cost">$3,200</div>
+                    <div class="sub_cost" data-line-item="ceremony-venue-fee"><?php echo '$3,200'?></div>
                     </div>
                 </div>
                 <div class="section group sub_category">
@@ -272,7 +406,7 @@
                 </div>
                 <div class="section group sub_category">
                     <div class="col span_1_of_2">
-                    <div class="sub_name">Grrom and Groomsmen Boutonnieres</div>
+                    <div class="sub_name">Groom and Groomsmen Boutonnieres</div>
                     </div>
                     <div class="col span_2_of_2">
                     <div class="sub_cost">$0.00</div>
@@ -529,7 +663,7 @@
 
 
 	<?php
- }
+}
 
 
- add_shortcode( 'bw-budget-calculator', 'bw_budget_calculator' );
+add_shortcode( 'bw-budget-calculator', 'bw_budget_calculator' );
