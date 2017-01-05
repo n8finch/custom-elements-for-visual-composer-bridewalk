@@ -139,26 +139,58 @@
 		 ******************************************************************************************
 		 */
 
+		//Add up category totals and replace total spent
+		function addTotalSpent() {
+			var totalSpent = addSubCats();
+			$('.spent_container').html('$' + totalSpent.toFixed(2));
+			console.log(totalSpent);
+		}
+
+
 		//Add up subcategories
-		function addSubCats() {
+		function addSubCats(sumTotalCost) {
 			var actualCost = $('.actual_cost');
+			var totalCostArr = [];
+			var sumTotalCost = 0;
+
+			//Sum the values in an array, parameter in .reduce() function
+			function sumArray(a, b) {
+				return a + b;
+			}
+
 			$.each(actualCost, function(key, catTotalElem) {
 				// console.log(catTotalElem);
+				var subCostArr = [];
+				var sumSubCats = 0;
 				var subCatsObj = $(catTotalElem).parents('div.section.group.category').siblings();
 				$.each(subCatsObj, function(key, value) {
-					var subCost = $(value).find('.sub_cost');
-					console.log(subCost);
+
+					var subCost = $(value).find('.sub_cost').html().replace(/\$|,/g, '');
+					subCost = parseFloat(subCost);
+					subCostArr.push(subCost);
+
+					sumSubCats = subCostArr.reduce(sumArray, 0);
+
 				});
-				// console.log(subCostVals);
-				console.log('-----------------------');
+
+				//Replace the category total with the new sum
+				$(catTotalElem).html('$' + sumSubCats.toFixed(2));
+
+				totalCostArr.push(sumSubCats);
+
+
+
 			});
 
+			sumTotalCost = totalCostArr.reduce(sumArray, 0);
+
+			return sumTotalCost;
 
 		};
 
-		addSubCats();
 
-		//Udateable container function
+
+		//Updateable container function
 		function updatePrice(event) {
 			var self = event.currentTarget;
 			var currentBudget = $(self).html();
@@ -178,11 +210,13 @@
 
 				//TODO: regex or replace $ sign and commas for numbers
 
-				$(self).html(newBudget);
+
+				$(self).html('$' + Number(newBudget).toFixed(2));
 
 
 				//Call functions for updating
 				addSubCats();
+				addTotalSpent();
 			});
 
 
@@ -204,6 +238,11 @@
 		});
 
 
+
+		//Initialize the budget calculator functions
+		(function init() {
+			addTotalSpent();
+		})();
 
 
 	}); // end document.ready();
