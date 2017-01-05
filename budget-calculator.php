@@ -9,6 +9,7 @@
 	 ?>
             <div class="budget_calculator_holder">
                 <div class="section group calculator_bar">
+                <div class="calcbar">
                     <div class="col span_1_of_2">
                     <div class="total_budget">Total Budget</div>
                     <div class="budget_container">$18,000</div>
@@ -17,6 +18,7 @@
                     <div class="total_budget">Total Spent</div>
                     <div class="spent_container">$8,700</div>
                     </div>
+                </div>
                 </div>
                 <div class="section group calculator_titles">
                     <div class="col span_1_of_2">
@@ -50,7 +52,7 @@
                     <div class="sub_name">Ceremony Venue Accessories</div>
                     </div>
                     <div class="col span_2_of_2">
-                    <div class="sub_cost">$0.00</div>
+                    <div class="sub_cost">$155.00</div>
                     </div>
                 </div>
                 <div class="section group sub_category">
@@ -58,7 +60,7 @@
                     <div class="sub_name">Other</div>
                     </div>
                     <div class="col span_2_of_2">
-                    <div class="sub_cost">$0.00</div>
+                    <div class="sub_cost">777.00</div>
                     </div>
                 </div>
                 </div>

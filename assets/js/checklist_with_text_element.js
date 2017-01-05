@@ -126,6 +126,13 @@
 
 
 
+
+
+
+
+
+
+
 		/******************************************************************************************
 		 * Budget Calculator section
 		 *
@@ -135,11 +142,21 @@
 		//Add up subcategories
 		function addSubCats() {
 			var actualCost = $('.actual_cost');
-			var actualCostContainer = actualCost[0];
-			var subCats = $(actualCostContainer).parentsUntil('div.section.group.category_holder').siblings();
-			console.log(subCats);
+			$.each(actualCost, function(key, catTotalElem) {
+				// console.log(catTotalElem);
+				var subCatsObj = $(catTotalElem).parents('div.section.group.category').siblings();
+				$.each(subCatsObj, function(key, value) {
+					var subCost = $(value).find('.sub_cost');
+					console.log(subCost);
+				});
+				// console.log(subCostVals);
+				console.log('-----------------------');
+			});
+
 
 		};
+
+		addSubCats();
 
 		//Udateable container function
 		function updatePrice(event) {
@@ -186,7 +203,6 @@
 			updatePrice(e);
 		});
 
-		console.log('ready!');
 
 
 
