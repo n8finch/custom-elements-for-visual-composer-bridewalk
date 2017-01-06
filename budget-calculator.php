@@ -86,56 +86,53 @@ function bw_budget_calculator() {
 	* Budget Calculator Model get the data here
 	*/
 
-
-
-
-	//All the vars
-	// total_budget
-	//  ceremony_venue_fee
-	// ceremony_ceremony_venue_accessories
-	// ceremony_other
-	// reception_reception_venue_fee
-	// reception_reception_venue_accessories
-	// reception_other
-	// photographer_photographer
-	// photographer_additional_prints
-	// photographer_other
-	// caterer_rehersal_dinner_venue
-	// caterer_beverage_bartenders
-	// caterer_food_service
-	// caterer_other
-	// attire_bride_accessories
-	// attire_dress_altertations
-	// attire_groom_accessories
-	// attire_groom_tux_suit
-	// attire_headpiece_veil
-	// attire_other
-	// florist_bouquets
-	// florist_ceremony_decorations
-	// florist_flower_girl_flowers
-	// florist_groom_groomsmen_boutonnieres
-	// florist_reception_decorations_centerpieces
-	// florist_other
-	// dj_dj
-	// dj_band
-	// dj_ceremony_musicians
-	// dj_other
-	// videographer_videographer
-	// videographer_other
-	// desserts_cake_cutting_fee
-	// desserts_other
-	// lodging_accomodations_wedding_night
-	// lodging_hotel_rooms_guests
-	// lodging_other
-	// transportation_guest_shuttle_parking
-	// transportation_limo_car_rentals
-	// transportation_other
-	// rentals_reception_rentals
-	// rentals_other
-	// beauty_hair_makeup
-	// beauty_prewedding_pampering
-	// beauty_other
-
+	$init_array_args = array(
+		total_budget => '$10,000',
+		ceremony_venue_fee => '$3,200',
+		ceremony_ceremony_venue_accessories => '$0',
+		ceremony_other  => '$0',
+		reception_reception_venue_fee => '$0',
+		reception_reception_venue_accessories => '$0',
+		reception_other => '$0',
+		photographer_photographer => '$0',
+		photographer_additional_prints => '$0',
+		photographer_other => '$0',
+		caterer_rehersal_dinner_venue => '$0',
+		caterer_beverage_bartenders => '$0',
+		caterer_food_service => '$0',
+		caterer_other => '$0',
+		attire_bride_accessories => '$0',
+		attire_dress_altertations => '$0',
+		attire_groom_accessories => '$0',
+		attire_groom_tux_suit => '$0',
+		attire_headpiece_veil => '$0',
+		attire_other => '$0',
+		florist_bouquets => '$0',
+		florist_ceremony_decorations => '$0',
+		florist_flower_girl_flowers => '$0',
+		florist_groom_groomsmen_boutonnieres => '$0',
+		florist_reception_decorations_centerpieces => '$0',
+		florist_other => '$0',
+		dj_dj => '$0',
+		dj_band => '$0',
+		dj_ceremony_musicians => '$0',
+		dj_other => '$0',
+		videographer_videographer => '$0',
+		videographer_other => '$0',
+		desserts_cake_cutting_fee => '$0',
+		desserts_other => '$0',
+		lodging_accomodations_wedding_night => '$0',
+		lodging_hotel_rooms_guests => '$0',
+		lodging_other => '$0',
+		transportation_guest_shuttle_parking => '$0',
+		transportation_limo_car_rentals => '$0',
+		transportation_other => '$0',
+		rentals_reception_rentals => '$0',
+		rentals_other => '$0',
+		beauty_hair_makeup => '$0',
+		beauty_prewedding_pampering => '$0',
+		beauty_other => '$0',
+	);
 
 	$user_ID = get_current_user_id();
 	$user_meta_key = 'budget_calculator_data';
@@ -144,54 +141,6 @@ function bw_budget_calculator() {
 	// Initializes if budget_calculator_data in db doesn't exist
 	// TODO: can this be moved out to another scope?
 	if( !$bc_array && is_user_logged_in() ) {
-
-		$init_array_args = array(
-			total_budget => '$10,000',
-			ceremony_venue_fee => '$3,200',
-			ceremony_ceremony_venue_accessories => '$0',
-			ceremony_other  => '$0',
-			reception_reception_venue_fee => '$0',
-			reception_reception_venue_accessories => '$0',
-			reception_other => '$0',
-			photographer_photographer => '$0',
-			photographer_additional_prints => '$0',
-			photographer_other => '$0',
-			caterer_rehersal_dinner_venue => '$0',
-			caterer_beverage_bartenders => '$0',
-			caterer_food_service => '$0',
-			caterer_other => '$0',
-			attire_bride_accessories => '$0',
-			attire_dress_altertations => '$0',
-			attire_groom_accessories => '$0',
-			attire_groom_tux_suit => '$0',
-			attire_headpiece_veil => '$0',
-			attire_other => '$0',
-			florist_bouquets => '$0',
-			florist_ceremony_decorations => '$0',
-			florist_flower_girl_flowers => '$0',
-			florist_groom_groomsmen_boutonnieres => '$0',
-			florist_reception_decorations_centerpieces => '$0',
-			florist_other => '$0',
-			dj_dj => '$0',
-			dj_band => '$0',
-			dj_ceremony_musicians => '$0',
-			dj_other => '$0',
-			videographer_videographer => '$0',
-			videographer_other => '$0',
-			desserts_cake_cutting_fee => '$0',
-			desserts_other => '$0',
-			lodging_accomodations_wedding_night => '$0',
-			lodging_hotel_rooms_guests => '$0',
-			lodging_other => '$0',
-			transportation_guest_shuttle_parking => '$0',
-			transportation_limo_car_rentals => '$0',
-			transportation_other => '$0',
-			rentals_reception_rentals => '$0',
-			rentals_other => '$0',
-			beauty_hair_makeup => '$0',
-			beauty_prewedding_pampering => '$0',
-			beauty_other => '$0',
-		);
 
 		//Asign the init_array_args to the bc_array since they're not there.
 		$bc_array = $init_array_args;
@@ -202,6 +151,14 @@ function bw_budget_calculator() {
 /**
 * Budget Calculater View
 */
+
+
+	if( !is_user_logged_in() ) {
+
+		$bc_array = $init_array_args;
+
+
+	}
 ?>
 <div class="budget_calculator_holder">
     <div class="section group calculator_bar">
