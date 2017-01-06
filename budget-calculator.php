@@ -170,7 +170,7 @@ function bw_budget_calculator() {
         </div>
         <div class="col span_2_of_2">
         <div class="total_budget">Total Spent</div>
-        <div class="spent_container">$8,700</div>
+        <div class="spent_container">$0.00</div>
         </div>
     </div>
     </div>
@@ -190,7 +190,7 @@ function bw_budget_calculator() {
         <div class="recommended">$4,125</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="actual_cost">$3,200</div>
+        <div class="actual_cost">$0.00</div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -206,7 +206,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Ceremony Venue Accessories</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="ceremony_ceremony_venue_accessories"><?php echo $bc_array['ceremony_ceremony_venue_accessories']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -214,7 +214,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Other</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="ceremony_other"><?php echo $bc_array['ceremony_other']; ?></div>
         </div>
     </div>
     </div>
@@ -225,7 +225,7 @@ function bw_budget_calculator() {
         <div class="recommended">$4,125</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="actual_cost">$5,400</div>
+        <div class="actual_cost">$0.00</div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -233,7 +233,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Reception Venue Fee</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="reception_reception_venue_fee"><?php echo $bc_array['reception_reception_venue_fee']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -241,7 +241,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Reception Venue Accessories</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="reception_reception_venue_accessories"><?php echo $bc_array['reception_reception_venue_accessories']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -249,7 +249,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Other</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="reception_other"><?php echo $bc_array['reception_other']; ?></div>
         </div>
     </div>
     </div>
@@ -260,7 +260,7 @@ function bw_budget_calculator() {
         <div class="recommended">$1,750</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="actual_cost">$1,500</div>
+        <div class="actual_cost">$0.00</div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -268,7 +268,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Photographer</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="photographer_photographer"><?php echo $bc_array['photographer_photographer']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -276,7 +276,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Additional Prints</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="photographer_additional_prints"><?php echo $bc_array['photographer_additional_prints']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -284,7 +284,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Other</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="photographer_other"><?php echo $bc_array['photographer_other']; ?></div>
         </div>
     </div>
     </div>
@@ -295,7 +295,7 @@ function bw_budget_calculator() {
         <div class="recommended">$8,460</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="actual_cost">$500</div>
+        <div class="actual_cost">$0.00</div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -303,7 +303,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Rehersal Dinner Venue</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="caterer_rehersal_dinner_venue"><?php echo $bc_array['caterer_rehersal_dinner_venue']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -311,7 +311,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Beverage and Bartenders</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="caterer_beverage_bartenders"><?php echo $bc_array['caterer_beverage_bartenders']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -319,7 +319,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Food and Service</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="caterer_food_service"><?php echo $bc_array['caterer_food_service']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -327,7 +327,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Other</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="caterer_other"><?php echo $bc_array['caterer_other']; ?></div>
         </div>
     </div>
     </div>
@@ -338,7 +338,7 @@ function bw_budget_calculator() {
         <div class="recommended">$1,460</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="actual_cost">$180</div>
+        <div class="actual_cost">$0.00</div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -346,7 +346,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Bride's Accessories</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="attire_bride_accessories"><?php echo $bc_array['attire_bride_accessories']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -354,7 +354,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Dress and Altertations</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="attire_dress_altertations"><?php echo $bc_array['attire_dress_altertations']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -362,7 +362,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Groom's Accessories</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="attire_groom_accessories"><?php echo $bc_array['attire_groom_accessories']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -370,7 +370,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Groom's Tux or Suit</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="attire_groom_tux_suit"><?php echo $bc_array['attire_groom_tux_suit']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -378,7 +378,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Headpiece and Veil</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="attire_headpiece_veil"><?php echo $bc_array['attire_headpiece_veil']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -386,7 +386,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Other</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="attire_other"><?php echo $bc_array['attire_other']; ?></div>
         </div>
     </div>
     </div>
@@ -397,7 +397,7 @@ function bw_budget_calculator() {
         <div class="recommended">$1,602</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="actual_cost">$126</div>
+        <div class="actual_cost">$0.00</div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -405,7 +405,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Bouquets</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="florist_bouquets"><?php echo $bc_array['florist_bouquets']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -413,7 +413,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Ceremony Decorations</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="florist_ceremony_decorations"><?php echo $bc_array['florist_ceremony_decorations']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -421,7 +421,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Flower Girl Flowers</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="florist_flower_girl_flowers"><?php echo $bc_array['florist_flower_girl_flowers']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -429,7 +429,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Groom and Groomsmen Boutonnieres</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="florist_groom_groomsmen_boutonnieres"><?php echo $bc_array['florist_groom_groomsmen_boutonnieres']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -437,7 +437,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Reception Decorations and Centerpieces</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="florist_reception_decorations_centerpieces"><?php echo $bc_array['florist_reception_decorations_centerpieces']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -445,7 +445,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Other</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="florist_other"><?php echo $bc_array['florist_other']; ?></div>
         </div>
     </div>
     </div>
@@ -456,7 +456,7 @@ function bw_budget_calculator() {
         <div class="recommended">$720</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="actual_cost">$800</div>
+        <div class="actual_cost">$0.00</div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -464,7 +464,7 @@ function bw_budget_calculator() {
         <div class="sub_name">DJ</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="dj_dj"><?php echo $bc_array['dj_dj']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -472,7 +472,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Band</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="dj_band"><?php echo $bc_array['dj_band']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -480,7 +480,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Ceremony Musicians</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="dj_ceremony_musicians"><?php echo $bc_array['dj_ceremony_musicians']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -488,7 +488,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Other</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="dj_other"><?php echo $bc_array['dj_other']; ?></div>
         </div>
     </div>
     </div>
@@ -499,7 +499,7 @@ function bw_budget_calculator() {
         <div class="recommended">$1,100</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="actual_cost">$950</div>
+        <div class="actual_cost">$0.00</div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -507,7 +507,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Videographer</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="videographer_videographer"><?php echo $bc_array['videographer_videographer']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -515,7 +515,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Other</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="videographer_other"><?php echo $bc_array['videographer_other']; ?></div>
         </div>
     </div>
     </div>
@@ -526,7 +526,7 @@ function bw_budget_calculator() {
         <div class="recommended">$450</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="actual_cost">$400</div>
+        <div class="actual_cost">$0.00</div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -534,7 +534,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Cake and Cutting Fee</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="desserts_cake_cutting_fee"><?php echo $bc_array['desserts_cake_cutting_fee']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -542,7 +542,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Other</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="desserts_other"><?php echo $bc_array['desserts_other']; ?></div>
         </div>
     </div>
     </div>
@@ -553,7 +553,7 @@ function bw_budget_calculator() {
         <div class="recommended">$216</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="actual_cost">$250</div>
+        <div class="actual_cost">$0.00</div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -561,7 +561,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Accomodations for Wedding Night</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="lodging_accomodations_wedding_night"><?php echo $bc_array['lodging_accomodations_wedding_night']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -569,7 +569,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Hotel Rooms for Out-of-Town Guests</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="lodging_hotel_rooms_guests"><?php echo $bc_array['lodging_hotel_rooms_guests']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -577,7 +577,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Other</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="lodging_other"><?php echo $bc_array['lodging_other']; ?></div>
         </div>
     </div>
     </div>
@@ -596,7 +596,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Guest Shuttle or Parking</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="transportation_guest_shuttle_parking"><?php echo $bc_array['transportation_guest_shuttle_parking']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -604,7 +604,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Limo or Car Rentals</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="transportation_limo_car_rentals"><?php echo $bc_array['transportation_limo_car_rentals']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -612,7 +612,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Other</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="transportation_other"><?php echo $bc_array['transportation_other']; ?></div>
         </div>
     </div>
     </div>
@@ -631,7 +631,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Reception Rentals</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="rentals_reception_rentals"><?php echo $bc_array['rentals_reception_rentals']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -639,7 +639,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Other</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="rentals_other"><?php echo $bc_array['rentals_other']; ?></div>
         </div>
     </div>
     </div>
@@ -658,7 +658,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Hair and Makeup</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="beauty_hair_makeup"><?php echo $bc_array['beauty_hair_makeup']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -666,7 +666,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Prewedding Pampering</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="beauty_prewedding_pampering"><?php echo $bc_array['beauty_prewedding_pampering']; ?></div>
         </div>
     </div>
     <div class="section group sub_category">
@@ -674,7 +674,7 @@ function bw_budget_calculator() {
         <div class="sub_name">Other</div>
         </div>
         <div class="col span_2_of_2">
-        <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
+        <div class="sub_cost" data-line-item="beauty_other"><?php echo $bc_array['beauty_other']; ?></div>
         </div>
     </div>
     </div>
