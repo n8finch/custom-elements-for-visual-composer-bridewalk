@@ -17,11 +17,15 @@ add_action( 'wp_ajax_update_budget_calculator_totals', 'update_budget_calculator
 
 function update_budget_calculator_totals() {
 
+	//Get the info we need
 	$user_ID = get_current_user_id();
 	$user_meta_key = 'budget_calculator_data';
-	$bc_array = get_user_meta( $user_ID, $user_meta_key, false);
+	$bc_array = get_user_meta( $user_ID, $user_meta_key, true);
+	$budget_line_item = $_POST['budget_line_item'];
+	$budget_new_amout = $_POST['budget_new_amout'];
 
-	// Initializes if budget_calculator_data doesn't exist
+
+	// Initializes if budget_calculator_data in db doesn't exist
 	// TODO: can this be moved out to another scope?
 	if( !$bc_array ) {
 
@@ -30,28 +34,14 @@ function update_budget_calculator_totals() {
 			ceremony_venue_fee => '$3,200',
 		);
 
+		//Asign the init_array_args to the bc_array since they're not there.
+		$bc_array = $init_array_args;
+
 		add_user_meta( $user_ID, $user_meta_key, $init_array_args , true );
 	}
 
-	//TODO: need to also add the initial value to the array 1)when it's created or 2)directly after it's created
 
 
-
-
-	// Quick type checking in php, outputs to browser console in admin ajax
-	echo 'Type: '. gettype($bc_array) . "\n";
-	echo 'Null: '. is_null($bc_array) . "\n";
-	echo 'Array: '. is_array($bc_array). "\n";
-	echo 'isset: '. is_array($bc_array). "\n";
-	echo 'Empty: '. empty($bc_array). "\n";
-	echo 'Boolean: '. is_bool($bc_array). "\n";
-	echo 'String: '. is_string($bc_array). "\n";
-	echo 'Object: '. is_object($bc_array). "\n";
-	echo 'Value Array: '. print_r($bc_array) . "\n";
-	echo 'Value String: '. $bc_array . "\n";
-
-	$budget_line_item = $_POST['budget_line_item'];
-	$budget_new_amout = $_POST['budget_new_amout'];
 	// $user_meta_value = get_user_meta( $user_ID, $user_meta_key, true);
 	//
 	// //Asign value to meta key if it exists or not
@@ -68,14 +58,22 @@ function update_budget_calculator_totals() {
 	// $user_meta_value = get_user_meta( $user_ID, $user_meta_key, true);
 
 	echo 'Key is: ' . $budget_line_item . "\n";
+	echo 'Key type: ' . gettype($budget_line_item) . "\n";
 
 	$arr_current_val = $bc_array[$budget_line_item];
 
 	echo 'Current value of the key is: ' . $arr_current_val . "\n";
 
-	$bc_array[$budget_line_item] = $budget_new_amout;
+	$bc_array[$budget_line_item] = '$'.$budget_new_amout;
 
-	echo 'New Value of the key is: ' . $bc_array[$budget_line_item];
+	update_user_meta( $user_ID, $user_meta_key, $bc_array);
+
+	echo 'New Value of the key is: ' . $bc_array[$budget_line_item] . "\n";
+
+	echo '----New Array ------';
+	print_r($bc_array);
+	echo '----New Array ------';
+
 	wp_die();
 }
 
@@ -137,6 +135,24 @@ function bw_budget_calculator() {
 	//  beauty_other
 
 
+	$user_ID = get_current_user_id();
+	$user_meta_key = 'budget_calculator_data';
+	$bc_array = get_user_meta( $user_ID, $user_meta_key, true);
+
+	// Initializes if budget_calculator_data in db doesn't exist
+	// TODO: can this be moved out to another scope?
+	if( !$bc_array ) {
+
+		$init_array_args = array(
+			total_budget => '$10,000',
+			ceremony_venue_fee => '$3,200',
+		);
+
+		//Asign the init_array_args to the bc_array since they're not there.
+		$bc_array = $init_array_args;
+
+		add_user_meta( $user_ID, $user_meta_key, $init_array_args , true );
+	}
 
 	 /**
 	  * Budget Calculater View
@@ -147,7 +163,7 @@ function bw_budget_calculator() {
                 <div class="calcbar">
                     <div class="col span_1_of_2">
                     <div class="total_budget">Total Budget</div>
-                    <div class="budget_container" data-line-item="total_budget">$18,000</div>
+                    <div class="budget_container" data-line-item="total_budget"><?php echo $bc_array['total_budget']; ?></div>
 					<!-- <i id="total_buget_pencil_icon" class="eltd-icon-linear-icon lnr lnr-pencil "></i> -->
                     </div>
                     <div class="col span_2_of_2">
@@ -180,7 +196,7 @@ function bw_budget_calculator() {
                     <div class="sub_name">Ceremony Venue Fee</div>
                     </div>
                     <div class="col span_2_of_2">
-                    <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo '$3,200'?></div>
+                    <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo $bc_array['ceremony_venue_fee']; ?></div>
                     </div>
                 </div>
                 <div class="section group sub_category">
