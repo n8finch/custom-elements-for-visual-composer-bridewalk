@@ -10,11 +10,46 @@
 //AJAX function for budget calculator, should only work if user is logged in
 add_action( 'wp_ajax_update_budget_calculator_totals', 'update_budget_calculator_totals' );
 
+/**
+ * This is the main AJAX function that fires every time an input box is "blur" (someone clicks out).
+ *
+ */
+
 function update_budget_calculator_totals() {
 
+	$user_ID = get_current_user_id();
+	$user_meta_key = 'budget_calculator_data';
+	$bc_array = get_user_meta( $user_ID, $user_meta_key, false);
+
+	// Initializes if budget_calculator_data doesn't exist
+	// TODO: can this be moved out to another scope?
+	if( !$bc_array ) {
+
+		$init_array_args = array(
+			total_budget => '$10,000',
+			ceremony_venue_fee => '$3,200',
+		);
+
+		add_user_meta( $user_ID, $user_meta_key, $init_array_args , true );
+	}
+
+	//TODO: need to also add the initial value to the array 1)when it's created or 2)directly after it's created
 
 
-	// $user_ID = get_current_user_id();
+
+
+	// Quick type checking in php, outputs to browser console in admin ajax
+	echo 'Type: '. gettype($bc_array) . "\n";
+	echo 'Null: '. is_null($bc_array) . "\n";
+	echo 'Array: '. is_array($bc_array). "\n";
+	echo 'isset: '. is_array($bc_array). "\n";
+	echo 'Empty: '. empty($bc_array). "\n";
+	echo 'Boolean: '. is_bool($bc_array). "\n";
+	echo 'String: '. is_string($bc_array). "\n";
+	echo 'Object: '. is_object($bc_array). "\n";
+	echo 'Value Array: '. print_r($bc_array) . "\n";
+	echo 'Value String: '. $bc_array . "\n";
+
 	$budget_line_item = $_POST['budget_line_item'];
 	$budget_new_amout = $_POST['budget_new_amout'];
 	// $user_meta_value = get_user_meta( $user_ID, $user_meta_key, true);
@@ -32,8 +67,16 @@ function update_budget_calculator_totals() {
 	//
 	// $user_meta_value = get_user_meta( $user_ID, $user_meta_key, true);
 
-	echo 'Receiving from Budget calc: ' . $budget_line_item . ' and ' . $budget_new_amout ;
-	die();
+	echo 'Key is: ' . $budget_line_item . "\n";
+
+	$arr_current_val = $bc_array[$budget_line_item];
+
+	echo 'Current value of the key is: ' . $arr_current_val . "\n";
+
+	$bc_array[$budget_line_item] = $budget_new_amout;
+
+	echo 'New Value of the key is: ' . $bc_array[$budget_line_item];
+	wp_die();
 }
 
 
@@ -43,52 +86,11 @@ function bw_budget_calculator() {
 	  * Budget Calculator Model get the data here
 	  */
 
+
+
+
 	 //All the vars
-	//  ceremony-venue-fee
-	//  ceremony-ceremony-venue-accessories
-	//  ceremony-other
-	//  reception-reception-venue-fee
-	//  reception-reception-venue-accessories
-	//  reception-other
-	//  photographer-photographer
-	//  photographer-additional-prints
-	//  photographer-other
-	//  caterer-rehersal-dinner-venue
-	//  caterer-beverage-bartenders
-	//  caterer-food-service
-	//  caterer-other
-	//  attire-bride-accessories
-	//  attire-dress-altertations
-	//  attire-groom-accessories
-	//  attire-groom-tux-suit
-	//  attire-headpiece-veil
-	//  attire-other
-	//  florist-bouquets
-	//  florist-ceremony-decorations
-	//  florist-flower-girl-flowers
-	//  florist-groom-groomsmen-boutonnieres
-	//  florist-reception-decorations-centerpieces
-	//  florist-other
-	//  dj-dj
- // 	 dj-band
- // 	 dj-ceremony-musicians
-	//  dj-other
-	//  videographer-videographer
-	//  videographer-other
-	//  desserts-cake-cutting-fee
-	//  desserts-other
-	//  lodging-accomodations-wedding-night
-	//  lodging-hotel-rooms-guests
-	//  lodging-other
-	//  transportation-guest-shuttle-parking
-	//  transportation-limo-car-rentals
-	//  transportation-other
-	//  rentals-reception-rentals
-	//  rentals-other
-	//  beauty-hair-makeup
-	//  beauty-prewedding-pampering
-	//  beauty-other
-	 //
+	// total_budget
 	//  ceremony_venue_fee
 	//  ceremony_ceremony_venue_accessories
 	//  ceremony_other
@@ -145,7 +147,7 @@ function bw_budget_calculator() {
                 <div class="calcbar">
                     <div class="col span_1_of_2">
                     <div class="total_budget">Total Budget</div>
-                    <div class="budget_container">$18,000</div>
+                    <div class="budget_container" data-line-item="total_budget">$18,000</div>
 					<!-- <i id="total_buget_pencil_icon" class="eltd-icon-linear-icon lnr lnr-pencil "></i> -->
                     </div>
                     <div class="col span_2_of_2">
@@ -178,7 +180,7 @@ function bw_budget_calculator() {
                     <div class="sub_name">Ceremony Venue Fee</div>
                     </div>
                     <div class="col span_2_of_2">
-                    <div class="sub_cost" data-line-item="ceremony-venue-fee"><?php echo '$3,200'?></div>
+                    <div class="sub_cost" data-line-item="ceremony_venue_fee"><?php echo '$3,200'?></div>
                     </div>
                 </div>
                 <div class="section group sub_category">
